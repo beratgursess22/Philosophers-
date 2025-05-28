@@ -16,19 +16,7 @@ Five philosophers sit around a table doing one of three things: **thinking**, **
 - Accurate simulation of philosopher states: **thinking**, **eating**, **sleeping**, and **died**.
 - Command-line arguments to configure simulation behavior.
 
-Arguments:
-
-number_of_philosophers: Number of philosophers (and forks)
-
-time_to_die: Time (ms) until a philosopher dies without eating
-
-time_to_eat: Time (ms) a philosopher spends eating
-
-time_to_sleep: Time (ms) a philosopher spends sleeping
-
-number_of_times_each_philosopher_must_eat (optional): Simulation ends when each philosopher has eaten this many times
-
-Goals Achieved
+✅ Goals Achieved
 
 Prevented race conditions and deadlocks using mutexes and smart thread management.
 Designed modular and maintainable C code.
@@ -42,3 +30,15 @@ Compile the program:
 make
 
 /philo [number_of_philosophers] [time_to_die] [time_to_eat] [time_to_sleep] [number_of_times_each_philosopher_must_eat (optional)]
+
+Arguments:
+
+number_of_philosophers: Number of philosophers (and forks)
+
+time_to_die: Time (ms) until a philosopher dies without eating
+
+time_to_eat: Time (ms) a philosopher spends eating
+
+time_to_sleep: Time (ms) a philosopher spends sleeping
+
+number_of_times_each_philosopher_must_eat (optional): Simulation ends when each philosopher has eaten this many times
