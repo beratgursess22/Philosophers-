@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philo_routing.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: igurses <igurses@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ibrahimberatgurses <ibrahimberatgurses@    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 17:36:48 by igurses           #+#    #+#             */
-/*   Updated: 2025/05/24 12:46:11 by igurses          ###   ########.fr       */
+/*   Updated: 2025/05/28 23:01:29 by ibrahimbera      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,27 +25,15 @@ void	sleeping(t_philo *philo)
 
 int	eating(t_philo *philo)
 {
-	if (philo->id % 2 == 1)
-	{
-			pthread_mutex_lock(philo->left_forks);
+	pthread_mutex_lock(philo->left_forks);
 	print_message(philo, "has taken a left fork");
-		pthread_mutex_lock(philo->right_forks);
-	print_message(philo, "has taken a right fork");
-	} else {
-		pthread_mutex_lock(philo->right_forks);
-		print_message(philo, "has taken a left fork");
-		pthread_mutex_lock(philo->left_forks);
-	print_message(philo, "has taken a right fork");
-	}
-	// pthread_mutex_lock(philo->left_forks);
-	// print_message(philo, "has taken a left fork");
 	if (philo->number_of_philos == 1)
 	{
 		ft_sleep(philo->time_to_die);
 		pthread_mutex_unlock(philo->left_forks);
 		return (1);
 	}
-	//pthread_mutex_lock(philo->right_forks);
+	pthread_mutex_lock(philo->right_forks);
 	print_message(philo, "has taken a right fork");
 	philo->eating_flag = 1;
 	print_message(philo, "is eating");
